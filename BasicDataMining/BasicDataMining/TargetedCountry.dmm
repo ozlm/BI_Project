@@ -1,0 +1,220 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="e7e0faa8-ead4-479c-9509-199563b329c1" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>TargetedCountry</ID>
+  <Name>TargetedCountry</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_OrdersETL</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="2504e840-7c10-4231-a3cc-f0d3a78aa850">
+    <DataSourceViewID>TargetingCountry</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d86f5598-8b40-4147-87d2-509a0ddee040">
+      <ID>Customer ID</ID>
+      <Name>Customer ID</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="bb556cbf-8e72-4d17-b195-9e994735d6e4">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="23b18333-c3f2-4a84-8afc-15b0720ed49f">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>CustomerID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="d947a07c-623c-4afb-b3ad-8af0a56443b1">
+      <ID>Order ID</ID>
+      <Name>Order ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="526e4b31-da4f-4bba-a822-48d74e13838c">
+          <DataType>Integer</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="126a2905-714b-4f85-aaea-640056c82fe3">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>OrderID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="7b3af2b1-4114-4262-ac6a-e0d467f1052a">
+      <ID>Ship Address</ID>
+      <Name>Ship Address</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4612ecf7-dafc-48b4-867d-1da039bd2ac7">
+          <DataType>WChar</DataType>
+          <DataSize>60</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3c2e7295-6bcb-4d03-b81d-f94c1acc9bd9">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>ShipAddress</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ee3a932d-615c-4ca1-90d0-5b6c24b0b64e">
+      <ID>Ship City</ID>
+      <Name>Ship City</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="28129aaa-eb15-4197-8b14-cb6b341e9664">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c47931bc-c863-4348-8b96-becd1d64b738">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>ShipCity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="8bf0c065-340a-4b2b-b0ea-407ab039a943">
+      <ID>Ship Country</ID>
+      <Name>Ship Country</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="da6004dc-e2f9-4b2c-850d-39e0b63df14b">
+          <DataType>WChar</DataType>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a3a8783b-abff-4403-a44e-140a51b3477f">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>ShipCountry</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="74f867a6-cf01-4dd6-889d-b5589550e331">
+      <ID>Ship Name</ID>
+      <Name>Ship Name</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="42db44e4-3afe-4723-b342-be4413af9025">
+          <DataType>WChar</DataType>
+          <DataSize>40</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cd93577b-737f-4ec9-9adb-3f70cd789567">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>ShipName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="6ada5299-e53f-4572-b861-e2f86e1b2b13">
+      <ID>Ship Postal Code</ID>
+      <Name>Ship Postal Code</Name>
+      <Type>Text</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="92dd438e-23ef-46eb-b8f7-a07622c10009">
+          <DataType>WChar</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="785b8155-afa5-47c2-acff-5a367077f5c8">
+            <TableID>dbo_OrdersETL</TableID>
+            <ColumnID>ShipPostalCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="e8bf0579-b7a7-4ed9-aa3c-0cf8699859ba">
+      <ID>TC_Decision_Tree</ID>
+      <Name>TC_Decision_Tree</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Decision_Trees</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="78f27ccc-a488-4340-9dc5-f9e7fc709f36">
+          <ID>Customer ID</ID>
+          <Name>Customer ID</Name>
+          <SourceColumnID>Customer ID</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="d719a31e-63f5-420a-a34f-e2cac5da1fe7">
+          <ID>Order ID</ID>
+          <Name>Order ID</Name>
+          <SourceColumnID>Order ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="7b338957-9aad-467f-a76d-8d1b073ff502">
+          <ID>Ship Address</ID>
+          <Name>Ship Address</Name>
+          <SourceColumnID>Ship Address</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="168a3356-d41f-4a26-91b4-c74ce6e21bc2">
+          <ID>Ship City</ID>
+          <Name>Ship City</Name>
+          <SourceColumnID>Ship City</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="042aec88-15a6-460d-b64a-004a95fb6e40">
+          <ID>Ship Country</ID>
+          <Name>Ship Country</Name>
+          <SourceColumnID>Ship Country</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="5792cfa8-7121-4eda-a073-46291937bcd6">
+          <ID>Ship Name</ID>
+          <Name>Ship Name</Name>
+          <SourceColumnID>Ship Name</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="b7173145-f522-4358-882d-53ba36e9862a">
+          <ID>Ship Postal Code</ID>
+          <Name>Ship Postal Code</Name>
+          <SourceColumnID>Ship Postal Code</SourceColumnID>
+        </Column>
+      </Columns>
+      <AllowDrillThrough>true</AllowDrillThrough>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+  <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
+</MiningStructure>
